@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<title>What is MFA?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is MFA and Why It Matters | NextGrid Technologies</title>
+<meta name="description" content="Learn how multi-factor authentication (MFA) protects Microsoft 365 accounts and business data.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<section class="container">
-<h1>What is Multi-Factor Authentication (MFA)?</h1>
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      <img src="favicon.ico" class="logo">
+      <span class="logo-text">NextGrid Technologies</span>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact" class="btn-small">Free Security Check</a>
+    </nav>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</header>
 
-<p>MFA adds an extra layer of protection to your accounts.</p>
-
-<ul>
-<li>Password + phone verification</li>
-<li>Stops hackers even if password is stolen</li>
-</ul>
-
-<a href="index.html#contact" class="btn-primary">Enable MFA Today</a>
-
+<section class="hero">
+  <div class="container hero-content">
+    <h1>What is MFA and Why It Matters for Your Business</h1>
+    <p>Multi-factor authentication (MFA) adds an extra layer of security to your accounts.</p>
+  </div>
 </section>
+
+<section class="blog-post">
+  <div class="container">
+    <p>MFA requires users to provide multiple forms of verification, making it harder for attackers to access accounts:</p>
+    <ol>
+      <li>Password (something you know).</li>
+      <li>Phone or app code (something you have).</li>
+      <li>Biometric verification (something you are, optional).</li>
+    </ol>
+    <p>Enabling MFA in Microsoft 365 significantly reduces phishing and account compromise risks.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NextGrid Technologies</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+hamburger.addEventListener("click", () => { navMenu.classList.toggle("active"); });
+</script>
+
 </body>
 </html>
