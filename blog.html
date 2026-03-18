@@ -25,16 +25,24 @@
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
   <h1>IT & Cybersecurity Blog</h1>
-  <p>Insights, guides, and tips to keep your business secure.</p>
+  <p>
+    Insights, guides, and tips to keep your business 
+    <span class="highlight-text">secure and protected</span>.
+  </p>
 </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- BLOG SECTION -->
 <section class="blog-section">
 <div class="container">
   <h2>Latest Articles</h2>
+
   <div class="blog-grid">
 
     <div class="card blog-card">
@@ -76,6 +84,20 @@
 </div>
 </section>
 
+<div class="section-divider"></div>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Need Help Securing Your Business?</h2>
+    <p>
+      Get a <span class="highlight-text">free Microsoft 365 security check</span> 
+      and identify risks in minutes.
+    </p>
+    <a href="index.html#contact" class="btn-primary">Request Free Security Check</a>
+  </div>
+</section>
+
 <footer>
 <div class="container">
   <p>© 2026 NextGrid Technologies</p>
@@ -85,7 +107,9 @@
 <script>
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
-hamburger.addEventListener("click", () => { navMenu.classList.toggle("active"); });
+hamburger.addEventListener("click", () => { 
+  navMenu.classList.toggle("active"); 
+});
 </script>
 
 </body>
