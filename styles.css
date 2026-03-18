@@ -173,3 +173,22 @@ border: 2px solid #00c2ff;
 }
 
 /* PRICE*
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.cta-section {
+  background: #0077cc;
+}
