@@ -1,24 +1,60 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<title>Top Cybersecurity Risks</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Cybersecurity Risks for Small Businesses | NextGrid Technologies</title>
+<meta name="description" content="Discover the biggest cybersecurity risks facing small businesses in Gauteng and how to mitigate them.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<section class="container">
-<h1>Top Cybersecurity Risks for Small Businesses</h1>
+<header>
+  <div class="container header-flex">
+    <div class="logo-area">
+      <img src="favicon.ico" class="logo">
+      <span class="logo-text">NextGrid Technologies</span>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact" class="btn-small">Free Security Check</a>
+    </nav>
+    <div class="hamburger" id="hamburger">☰</div>
+  </div>
+</header>
 
-<ul>
-<li>Phishing attacks</li>
-<li>Weak passwords</li>
-<li>Unpatched systems</li>
-<li>Ransomware</li>
-</ul>
-
-<a href="index.html#contact" class="btn-primary">Get Protection</a>
-
+<section class="hero">
+  <div class="container hero-content">
+    <h1>Top Cybersecurity Risks for Small Businesses</h1>
+    <p>Understand the biggest threats facing small businesses in Gauteng and how to reduce risk.</p>
+  </div>
 </section>
+
+<section class="blog-post">
+  <div class="container">
+    <p>Small businesses are often targets of cyberattacks due to limited IT resources. Key risks include:</p>
+    <ol>
+      <li>Phishing attacks targeting staff emails.</li>
+      <li>Ransomware attacks on business data.</li>
+      <li>Unpatched software vulnerabilities.</li>
+      <li>Weak password and authentication practices.</li>
+      <li>Insider threats or accidental data leaks.</li>
+    </ol>
+    <p>Proactive monitoring, MFA, and regular staff training help mitigate these risks.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 NextGrid Technologies</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+hamburger.addEventListener("click", () => { navMenu.classList.toggle("active"); });
+</script>
+
 </body>
 </html>
