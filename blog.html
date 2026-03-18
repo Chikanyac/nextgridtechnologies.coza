@@ -11,67 +11,61 @@
 
 <header>
   <div class="container header-flex">
-
     <div class="logo-area">
       <img src="favicon.ico" class="logo">
       <span class="logo-text">NextGrid Technologies</span>
     </div>
-
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
-      <a href="index.html#contact" class="btn-small">Free Security Check</a>
+      <a href="#contact" class="btn-small">Free Security Check</a>
     </nav>
-
     <div class="hamburger" id="hamburger">☰</div>
-
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-content">
+  <div class="container">
     <h1>IT & Cybersecurity Blog</h1>
     <p>Insights, guides, and tips to keep your business secure.</p>
   </div>
 </section>
 
-<!-- BLOG POSTS -->
-<section class="blog-section">
+<!-- BLOG LIST -->
+<section>
   <div class="container">
-
     <h2>Latest Articles</h2>
-
     <div class="services-grid">
 
       <div class="card">
-        <h3>What to Do if Your Microsoft 365 Account Is Hacked</h3>
-        <p>Step-by-step guide to recover and secure your account quickly.</p>
+        <h3>What to Do If Your Microsoft 365 Account is Hacked</h3>
+        <p>Step-by-step guide to recover and secure your account after a breach.</p>
         <a href="microsoft-365-hacked.html" class="btn-primary">Read More</a>
       </div>
 
       <div class="card">
         <h3>How to Stop Phishing Emails in Microsoft 365</h3>
-        <p>Learn how to protect your business from phishing attacks and scams.</p>
+        <p>Learn how to protect your business from phishing attacks using built-in M365 tools.</p>
         <a href="phishing-protection.html" class="btn-primary">Read More</a>
       </div>
 
       <div class="card">
         <h3>Top Cybersecurity Risks for Small Businesses</h3>
-        <p>Understand the biggest threats facing small businesses in Gauteng.</p>
+        <p>Understand the biggest threats facing small businesses in South Africa and how to prevent them.</p>
         <a href="cybersecurity-risks.html" class="btn-primary">Read More</a>
       </div>
 
       <div class="card">
-        <h3>Do Small Businesses Really Need IT Support?</h3>
-        <p>Why professional IT support is essential for growth and security.</p>
+        <h3>Do Small Businesses Need IT Support?</h3>
+        <p>Why having professional IT support is essential for business growth and security.</p>
         <a href="it-support-benefits.html" class="btn-primary">Read More</a>
       </div>
 
       <div class="card">
-        <h3>What is MFA and Why It Matters for Your Business</h3>
-        <p>Learn how multi-factor authentication protects your accounts and data.</p>
+        <h3>What is MFA and Why It Matters</h3>
+        <p>Learn how multi-factor authentication protects your business and strengthens Microsoft 365 security.</p>
         <a href="mfa-explained.html" class="btn-primary">Read More</a>
       </div>
 
@@ -86,7 +80,6 @@
 <script>
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
-
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
