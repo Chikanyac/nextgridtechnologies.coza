@@ -43,7 +43,6 @@ header {
 
 .logo {
   height: 50px;
-  margin-right: 0.5rem;
 }
 
 nav a {
@@ -51,7 +50,6 @@ nav a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -65,10 +63,6 @@ nav a.btn-small {
   border-radius: 4px;
 }
 
-nav a.btn-small:hover {
-  background: var(--primary-color);
-}
-
 /* ====== Hamburger ====== */
 .hamburger {
   display: none;
@@ -78,15 +72,33 @@ nav a.btn-small:hover {
 
 /* ====== Hero ====== */
 .hero {
-  background: linear-gradient(120deg, var(--primary-color) 0%, var(--accent-bg) 100%);
+  background: linear-gradient(120deg, #1a73e8, #6ea3ff);
   padding: 3rem 0;
   text-align: center;
   color: #fff;
 }
 
-.hero h1,
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
 .hero p {
-  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Hero checklist */
+.hero-points {
+  margin: 1.5rem 0;
+}
+
+.hero-points p {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
 }
 
 /* ====== Buttons ====== */
@@ -97,40 +109,38 @@ nav a.btn-small:hover {
   padding: 0.7rem 1.5rem;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 1rem;
-  transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: var(--primary-color);
+  background: #e67e22;
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  margin-left: 0.5rem;
-}
-
-.btn-secondary:hover {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-/* ====== Trust Bar (FIXED VISIBILITY) ====== */
+/* ====== TRUST BAR (PREMIUM BADGE STYLE) ====== */
 .trust-bar {
-  background: var(--primary-color);
-  padding: 0.8rem 0;
-  text-align: center;
-  font-weight: bold;
+  background: #0d47a1;
+  padding: 1rem 0;
 }
 
-.trust-bar p {
+.trust-bar .container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-item {
   color: #fff;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
 }
 
-/* ====== Section Layout ====== */
+/* ====== Sections ====== */
 section {
   padding: 3rem 0;
 }
@@ -139,19 +149,8 @@ section:nth-of-type(even) {
   background-color: var(--accent-bg);
 }
 
-section:nth-of-type(odd) {
-  background-color: #fff;
-}
-
-/* Divider */
-.section-divider {
-  height: 4px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  margin: 2rem 0;
-}
-
-/* ====== Grid Layouts ====== */
-.m365-grid, .services-grid, .who-grid, .topics-list, .blog-grid {
+/* ====== Grid ====== */
+.m365-grid, .services-grid, .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
@@ -159,65 +158,26 @@ section:nth-of-type(odd) {
 }
 
 /* ====== Cards ====== */
-.card, .tech-card, .who-card, .m365-card, .blog-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--primary-color);
-  border-left: 4px solid var(--primary-color);
+.card, .m365-card, .blog-card {
+  background: #fff;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  border-left: 4px solid var(--primary-color);
+  padding: 1.5rem;
+  transition: 0.3s;
 }
 
-.card.highlight {
+.card:hover, .m365-card:hover, .blog-card:hover {
+  transform: translateY(-5px);
   border-left: 4px solid var(--secondary-color);
 }
 
-.card:hover, .tech-card:hover, .who-card:hover, .m365-card:hover, .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  border-color: var(--secondary-color);
-  background: linear-gradient(180deg, #ffffff 0%, var(--accent-bg) 100%);
-}
-
-/* Card Content */
-.card h3, .tech-card h3, .who-card h3, .m365-card h3, .blog-card h3 {
-  font-size: 1.25rem;
-  margin: 1rem;
+.card h3 {
   color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
-.card p, .tech-card p, .who-card p, .m365-card p, .blog-card p {
-  flex-grow: 1;
-  margin: 0 1rem 1rem 1rem;
-  color: #555;
-}
-
-/* Icons */
-.tech-card .icon {
-  font-size: 2.5rem;
-  margin: 1rem;
-  color: var(--secondary-color);
-}
-
-/* Card Buttons */
-.card .btn-primary, .tech-card .btn-primary, .m365-card .btn-primary, .blog-card .btn-primary {
-  margin: 0 1rem 1rem 1rem;
-  align-self: flex-start;
-}
-
-/* ====== Blog Image ====== */
-.blog-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* ====== Contact Form ====== */
+/* ====== Contact ====== */
 .contact-wrapper {
-  padding: 2rem 0;
   text-align: center;
 }
 
@@ -227,7 +187,6 @@ section:nth-of-type(odd) {
   padding: 0.7rem;
   margin: 0.5rem 0;
   border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
 .contact-form button {
@@ -235,61 +194,14 @@ section:nth-of-type(odd) {
   color: #fff;
   padding: 0.7rem 2rem;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: var(--primary-color);
-}
-
-/* ====== Topics List ====== */
-.topics-list li {
-  background-color: var(--card-bg);
-  border: 1px solid var(--primary-color);
-  border-left: 4px solid var(--primary-color);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  transition: all 0.3s ease;
-}
-
-.topics-list li:hover {
-  transform: translateY(-3px);
-  border-left: 4px solid var(--secondary-color);
-}
-
-/* ====== Highlight Text ====== */
-.highlight-text {
-  color: var(--secondary-color);
-  font-weight: bold;
-}
-
-/* ====== Headings ====== */
-h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
-}
-
-h3 {
-  color: #0d47a1;
 }
 
 /* ====== Footer ====== */
 footer {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 1rem 0;
-  margin-top: 2rem;
-}
-
-footer a {
-  color: var(--secondary-color);
-}
-
-footer a:hover {
-  color: #fff;
 }
 
 /* ====== Responsive ====== */
@@ -300,7 +212,6 @@ footer a:hover {
   nav {
     display: none;
     flex-direction: column;
-    gap: 1rem;
   }
   nav.active {
     display: flex;
