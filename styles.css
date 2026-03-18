@@ -185,3 +185,55 @@ footer {
     display: flex;
   }
 }
+
+/* BLOG GRID LAYOUT */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* BLOG CARD STYLING */
+.blog-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.blog-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: #222;
+}
+
+.blog-card p {
+  flex-grow: 1;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* BLOG IMAGE STYLING */
+.blog-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* BLOG BUTTON */
+.blog-card .btn-primary {
+  margin: 0 1rem 1rem 1rem;
+  align-self: flex-start;
+}
