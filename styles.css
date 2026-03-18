@@ -1,10 +1,10 @@
 /* ====== COLOR VARIABLES ====== */
 :root {
-  --primary-color: #1a73e8;     /* Deep blue for headings, links, nav */
-  --secondary-color: #f39c12;   /* Bright orange for highlights, buttons */
-  --accent-bg: #eef3fb;         /* Light blue background for sections */
-  --card-bg: #ffffff;            /* Cards background */
-  --text-color: #333;            /* Default text */
+  --primary-color: #1a73e8;
+  --secondary-color: #f39c12;
+  --accent-bg: #eef3fb;
+  --card-bg: #ffffff;
+  --text-color: #333;
 }
 
 /* ====== General Reset ====== */
@@ -89,16 +89,8 @@ nav a.btn-small:hover {
   color: #fff;
 }
 
-.hero ul {
-  list-style: none;
-  margin: 1rem 0;
-}
-
-.hero ul li {
-  margin: 0.5rem 0;
-}
-
-.hero .btn-primary {
+/* ====== Buttons ====== */
+.btn-primary {
   display: inline-block;
   background: var(--secondary-color);
   color: #fff;
@@ -109,16 +101,48 @@ nav a.btn-small:hover {
   transition: background 0.3s ease;
 }
 
-.hero .btn-primary:hover {
-  background: #e67e22; /* Slightly darker orange */
+.btn-primary:hover {
+  background: var(--primary-color);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: #fff;
 }
 
 /* ====== Trust Bar ====== */
 .trust-bar {
-  background: #e9ecef;
+  background: var(--primary-color);
+  color: #fff;
   padding: 0.8rem 0;
   text-align: center;
   font-weight: bold;
+}
+
+/* ====== Section Layout ====== */
+section {
+  padding: 3rem 0;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--accent-bg);
+}
+
+section:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+/* Divider */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  margin: 2rem 0;
 }
 
 /* ====== Grid Layouts ====== */
@@ -133,25 +157,27 @@ nav a.btn-small:hover {
 .card, .tech-card, .who-card, .m365-card, .blog-card {
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
+  border-left: 4px solid var(--primary-color);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .card.highlight {
-  border-color: var(--secondary-color);
+  border-left: 4px solid var(--secondary-color);
 }
 
 .card:hover, .tech-card:hover, .who-card:hover, .m365-card:hover, .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   border-color: var(--secondary-color);
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent-bg) 100%);
 }
 
-/* Card Headings & Text */
+/* Card Content */
 .card h3, .tech-card h3, .who-card h3, .m365-card h3, .blog-card h3 {
   font-size: 1.25rem;
   margin: 1rem;
@@ -162,40 +188,29 @@ nav a.btn-small:hover {
   flex-grow: 1;
   margin: 0 1rem 1rem 1rem;
   color: #555;
-  line-height: 1.5;
 }
 
-/* Card Icons */
+/* Icons */
 .tech-card .icon {
   font-size: 2.5rem;
   margin: 1rem;
+  color: var(--secondary-color);
 }
 
 /* Card Buttons */
 .card .btn-primary, .tech-card .btn-primary, .m365-card .btn-primary, .blog-card .btn-primary {
   margin: 0 1rem 1rem 1rem;
   align-self: flex-start;
-  background: var(--secondary-color);
-  color: #fff;
-  transition: background 0.3s ease;
 }
 
-.card .btn-primary:hover,
-.tech-card .btn-primary:hover,
-.m365-card .btn-primary:hover,
-.blog-card .btn-primary:hover {
-  background: var(--primary-color);
-}
-
-/* Blog Image */
+/* ====== Blog Image ====== */
 .blog-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  display: block;
 }
 
-/* Contact Form */
+/* ====== Contact Form ====== */
 .contact-wrapper {
   padding: 2rem 0;
   text-align: center;
@@ -217,51 +232,45 @@ nav a.btn-small:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
   background: var(--primary-color);
 }
 
-/* Popular Topics List */
+/* ====== Topics List ====== */
 .topics-list li {
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
+  border-left: 4px solid var(--primary-color);
   border-radius: 8px;
   padding: 0.75rem 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .topics-list li:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  border-color: var(--secondary-color);
+  border-left: 4px solid var(--secondary-color);
 }
 
-.topics-list a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 500;
+/* ====== Highlight Text ====== */
+.highlight-text {
+  color: var(--secondary-color);
+  font-weight: bold;
 }
 
-/* Section Titles */
+/* ====== Headings ====== */
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: var(--primary-color);
 }
 
-/* Sections Background Alternating */
-section:nth-of-type(even) {
-  background-color: var(--accent-bg);
+h3 {
+  color: #0d47a1;
 }
 
-section:nth-of-type(odd) {
-  background-color: #fff;
-}
-
-/* Footer */
+/* ====== Footer ====== */
 footer {
   background-color: var(--primary-color);
   color: #fff;
@@ -272,14 +281,13 @@ footer {
 
 footer a {
   color: var(--secondary-color);
-  transition: color 0.3s ease;
 }
 
 footer a:hover {
   color: #fff;
 }
 
-/* Responsive */
+/* ====== Responsive ====== */
 @media(max-width: 768px){
   .hamburger {
     display: block;
