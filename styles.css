@@ -237,3 +237,88 @@ footer {
   margin: 0 1rem 1rem 1rem;
   align-self: flex-start;
 }
+/* SERVICES & SECURITY GRIDS */
+.services-grid, .m365-grid, .who-grid, .topics-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* GENERAL CARD STYLING */
+.card, .tech-card, .who-card, .m365-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover, .tech-card:hover, .who-card:hover, .m365-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* CARD HEADINGS & TEXT */
+.card h3, .tech-card h3, .who-card h3, .m365-card h3 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: #222;
+}
+
+.card p, .tech-card p, .who-card p, .m365-card p {
+  flex-grow: 1;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* CARD ICONS (for IT/Services section) */
+.tech-card .icon {
+  font-size: 2.5rem;
+  margin: 1rem;
+}
+
+/* PRICE TAGS */
+.price-tag {
+  margin: 0 1rem 1rem 1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* BUTTONS IN CARDS */
+.card .btn-primary, .tech-card .btn-primary, .m365-card .btn-primary {
+  margin: 0 1rem 1rem 1rem;
+  align-self: flex-start;
+}
+
+/* POPULAR TOPICS LIST */
+.topics-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.topics-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topics-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.topics-list a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
