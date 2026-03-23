@@ -37,7 +37,7 @@ body {
 
 /* ====== Header ====== */
 header {
-  background: var(--section-1-bg); /* darkest blue */
+  background: var(--section-1-bg);
   border-bottom: 2px solid var(--secondary-color);
   padding: 1rem 0;
 }
@@ -46,6 +46,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -88,7 +89,6 @@ nav a.btn-small {
   margin-bottom: 1rem;
 }
 
-/* Hero checklist */
 .hero-points {
   margin: 1.5rem 0;
 }
@@ -111,6 +111,23 @@ nav a.btn-small {
 
 .btn-primary:hover {
   background: #e67e22;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: var(--card-bg);
+  color: var(--text-light);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -142,34 +159,13 @@ nav a.btn-small {
 }
 
 /* ====== Sections with blue shades ====== */
-section:nth-of-type(1) {
-  background-color: var(--section-1-bg);
-  color: var(--text-light);
-}
+section:nth-of-type(1) { background-color: var(--section-1-bg); color: var(--text-light); }
+section:nth-of-type(2) { background-color: var(--section-2-bg); color: var(--text-light); }
+section:nth-of-type(3) { background-color: var(--section-3-bg); color: var(--text-light); }
+section:nth-of-type(4) { background-color: var(--section-4-bg); color: var(--text-dark); }
+section:nth-of-type(5) { background-color: var(--section-5-bg); color: var(--text-dark); }
 
-section:nth-of-type(2) {
-  background-color: var(--section-2-bg);
-  color: var(--text-light);
-}
-
-section:nth-of-type(3) {
-  background-color: var(--section-3-bg);
-  color: var(--text-light);
-}
-
-section:nth-of-type(4) {
-  background-color: var(--section-4-bg);
-  color: var(--text-dark);
-}
-
-section:nth-of-type(5) {
-  background-color: var(--section-5-bg);
-  color: var(--text-dark);
-}
-
-section {
-  padding: 3rem 0;
-}
+section { padding: 3rem 0; }
 
 /* ====== Core Services Intro Text ====== */
 .core-services-intro {
@@ -208,17 +204,12 @@ section {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.card h3, .m365-card h3, .blog-card h3 {
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
-}
+.card h3, .m365-card h3, .blog-card h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
 
 /* ====== Contact ====== */
-.contact-wrapper {
-  text-align: center;
-}
+.contact-wrapper { text-align: center; }
 
-.contact-form input, 
+.contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.7rem;
@@ -243,106 +234,67 @@ section {
 }
 
 /* ====== Footer ====== */
-footer {
-  background: var(--section-1-bg);
+footer { background: var(--section-1-bg); color: #fff; text-align: center; padding: 1rem 0; }
+
+/* ====== WhatsApp Badge ===== */
+.whatsapp-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--section-1-bg);
   color: #fff;
-  text-align: center;
-  padding: 1rem 0;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
 }
+
+.whatsapp-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.whatsapp-badge .whatsapp-icon {
+  background-color: #25d366;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.whatsapp-badge .whatsapp-text { font-size: 0.95rem; }
 
 /* ====== Responsive ====== */
 @media (max-width: 1024px) {
-  /* Adjust container padding */
-  .container {
-    width: 95%;
-  }
-
-  /* Reduce hero padding */
-  .hero {
-    padding: 2rem 1rem;
-  }
-
-  .hero-content {
-    max-width: 90%;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero-points p {
-    font-size: 1rem;
-  }
-
-  /* Stack nav vertically on tablets */
-  nav {
-    display: none;
-    flex-direction: column;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
+  .container { width: 95%; }
+  .hero { padding: 2rem 1rem; }
+  .hero-content { max-width: 90%; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 1rem; }
+  .hero-points p { font-size: 1rem; }
+  nav { display: none; flex-direction: column; }
+  nav.active { display: flex; }
+  .hamburger { display: block; }
 }
 
-/* Mobile specific */
 @media (max-width: 768px) {
-  /* Sections padding reduced */
-  section {
-    padding: 2rem 1rem;
-  }
-
-  /* Grid becomes single column if needed */
-  .m365-grid, .services-grid, .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Cards padding reduced */
-  .m365-grid .m365-card,
-  .services-grid .card,
-  .blog-grid .blog-card {
-    padding: 1rem;
-  }
-
-  /* Buttons scale */
-  .btn-primary,
-  .contact-form button,
-  nav a.btn-small {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  /* Hero font size smaller */
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .core-services-intro {
-    font-size: 1.1rem;
-  }
-
-  /* WhatsApp badge smaller */
-  .whatsapp-badge {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .whatsapp-badge .whatsapp-icon {
-    width: 25px;
-    height: 25px;
-    font-size: 1rem;
-  }
+  section { padding: 2rem 1rem; }
+  .m365-grid, .services-grid, .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .m365-grid .m365-card, .services-grid .card, .blog-grid .blog-card { padding: 1rem; }
+  .btn-primary, .btn-secondary, .contact-form button, nav a.btn-small { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.95rem; }
+  .core-services-intro { font-size: 1.1rem; }
+  .whatsapp-badge { padding: 0.6rem 1rem; font-size: 0.85rem; }
+  .whatsapp-badge .whatsapp-icon { width: 25px; height: 25px; font-size: 1rem; }
 }
