@@ -118,8 +118,9 @@ nav a.btn-small {
 }
 
 /* ===== TRUST BAR ===== */
+
 .trust-bar {
-  background-color: #f39c12; /* bright orange for visibility */
+  background: linear-gradient(90deg, #0b3d91, #0d47a1); /* dark blue gradient */
   color: #fff;
   display: flex;
   justify-content: center;
@@ -128,18 +129,22 @@ nav a.btn-small {
   padding: 1.5rem 0;
   font-weight: 500;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* subtle shadow for separation */
 }
 
 .trust-bar .trust-item {
-  background: rgba(0, 0, 0, 0.1); /* semi-transparent black for badges */
-  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.15); /* slightly transparent white badges */
+  padding: 0.6rem 1.2rem;
   border-radius: 25px;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
   white-space: nowrap;
+  backdrop-filter: blur(4px); /* subtle glass effect */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* badge shadow */
 }
+
 /* ====== Sections ====== */
 section {
   padding: 3rem 0;
