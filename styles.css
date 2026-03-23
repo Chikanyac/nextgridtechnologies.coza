@@ -109,10 +109,12 @@ nav a.btn-small {
   padding: 0.7rem 1.5rem;
   text-decoration: none;
   border-radius: 5px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn-primary:hover {
   background: #e67e22;
+  transform: translateY(-2px);
 }
 
 /* ====== TRUST BAR (PREMIUM BADGE STYLE) ====== */
@@ -149,29 +151,44 @@ section:nth-of-type(even) {
   background-color: var(--accent-bg);
 }
 
+/* ====== Core Services Intro Text ====== */
+.core-services-intro {
+  color: #333; /* dark text for light background */
+  font-weight: 600; /* slightly bolder */
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
 /* ====== Grid ====== */
 .m365-grid, .services-grid, .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 2rem 0;
 }
 
-/* ====== Cards ====== */
-.card, .m365-card, .blog-card {
+/* ====== Cards / Grid Highlight ====== */
+.m365-grid .m365-card,
+.services-grid .card,
+.blog-grid .blog-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-left 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* subtle highlight */
 }
 
-.card:hover, .m365-card:hover, .blog-card:hover {
+.m365-grid .m365-card:hover,
+.services-grid .card:hover,
+.blog-grid .blog-card:hover {
   transform: translateY(-5px);
   border-left: 4px solid var(--secondary-color);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* stronger on hover */
 }
 
-.card h3 {
+.card h3, .m365-card h3, .blog-card h3 {
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
@@ -187,6 +204,7 @@ section:nth-of-type(even) {
   padding: 0.7rem;
   margin: 0.5rem 0;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .contact-form button {
@@ -194,6 +212,14 @@ section:nth-of-type(even) {
   color: #fff;
   padding: 0.7rem 2rem;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
 }
 
 /* ====== Footer ====== */
