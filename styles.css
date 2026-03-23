@@ -119,28 +119,27 @@ nav a.btn-small {
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
-  background-color: #0d47a1; /* deep blue */
+  background-color: #f39c12; /* bright orange for visibility */
   color: #fff;
   display: flex;
   justify-content: center;
-  gap: 1rem;        /* space between badges */
-  flex-wrap: wrap;   /* wrap on small screens */
+  gap: 1rem;
+  flex-wrap: wrap;
   padding: 1.5rem 0;
   font-weight: 500;
   text-align: center;
 }
 
 .trust-bar .trust-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1); /* semi-transparent black for badges */
   padding: 0.5rem 1rem;
   border-radius: 25px;
-  display: inline-flex;   /* inline-flex to avoid full width stacking */
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
-  white-space: nowrap;    /* keep text in one line */
+  white-space: nowrap;
 }
-
 /* ====== Sections ====== */
 section {
   padding: 3rem 0;
