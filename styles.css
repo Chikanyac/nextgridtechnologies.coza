@@ -249,3 +249,100 @@ footer {
   text-align: center;
   padding: 1rem 0;
 }
+
+/* ====== Responsive ====== */
+@media (max-width: 1024px) {
+  /* Adjust container padding */
+  .container {
+    width: 95%;
+  }
+
+  /* Reduce hero padding */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-points p {
+    font-size: 1rem;
+  }
+
+  /* Stack nav vertically on tablets */
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Mobile specific */
+@media (max-width: 768px) {
+  /* Sections padding reduced */
+  section {
+    padding: 2rem 1rem;
+  }
+
+  /* Grid becomes single column if needed */
+  .m365-grid, .services-grid, .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Cards padding reduced */
+  .m365-grid .m365-card,
+  .services-grid .card,
+  .blog-grid .blog-card {
+    padding: 1rem;
+  }
+
+  /* Buttons scale */
+  .btn-primary,
+  .contact-form button,
+  nav a.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero font size smaller */
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .core-services-intro {
+    font-size: 1.1rem;
+  }
+
+  /* WhatsApp badge smaller */
+  .whatsapp-badge {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .whatsapp-badge .whatsapp-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 1rem;
+  }
+}
