@@ -140,6 +140,10 @@ nav a.btn-small {
   font-size: 0.95rem;
 }
 
+.trust-bar {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* ====== Sections ====== */
 section {
