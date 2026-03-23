@@ -248,28 +248,42 @@ footer {
 }
 
 
-/* WhatsApp Floating Button */
-.whatsapp-button {
+/* ===== WhatsApp Premium Badge ===== */
+.whatsapp-badge {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
+  background-color: #0d47a1; /* Matches trust bar */
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+.whatsapp-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.whatsapp-badge .whatsapp-icon {
+  background-color: #25d366; /* WhatsApp green */
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 1000;
-  transition: transform 0.2s ease;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
-.whatsapp-button img {
-  width: 35px;
-  height: 35px;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.1);
+.whatsapp-badge .whatsapp-text {
+  font-size: 0.95rem;
 }
