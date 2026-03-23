@@ -35,11 +35,13 @@ body {
   margin: 0 auto;
 }
 
-/* ====== Header ====== */
+/* ====== Header with background image ====== */
 header {
-  background: var(--section-1-bg);
+  background: linear-gradient(rgba(11,61,145,0.7), rgba(26,115,232,0.7)), url('header-bg.jpg') center/cover no-repeat;
   border-bottom: 2px solid var(--secondary-color);
   padding: 1rem 0;
+  position: relative;
+  color: var(--text-light);
 }
 
 .header-flex {
@@ -47,15 +49,18 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2; /* ensures logo/nav above background */
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo {
   height: 50px;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
 }
 
 nav a {
@@ -63,6 +68,7 @@ nav a {
   text-decoration: none;
   color: var(--text-light);
   font-weight: 500;
+  transition: color 0.3s;
 }
 
 nav a:hover {
@@ -78,9 +84,10 @@ nav a.btn-small {
 
 /* ====== Hamburger ====== */
 .hamburger {
-  display: none; /* hidden by default on desktop */
+  display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--text-light);
 }
 
 /* ====== Hero ====== */
@@ -179,51 +186,6 @@ section:nth-of-type(5) { background-color: var(--section-5-bg); color: var(--tex
 
 section { padding: 3rem 0; }
 
-/* ====== Testimonials Section ====== */
-.testimonials-section {
-  background-color: var(--section-4-bg);
-  color: var(--text-dark);
-  padding: 3rem 0;
-  text-align: center;
-}
-
-.testimonials-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.testimonial-card {
-  background: var(--card-bg);
-  color: var(--text-light);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.testimonial-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.testimonial-card h4 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin: 0;
-  color: var(--secondary-color);
-}
-
 /* ====== Core Services Intro Text ====== */
 .core-services-intro {
   font-weight: 600;
@@ -262,6 +224,42 @@ section { padding: 3rem 0; }
 }
 
 .card h3, .m365-card h3, .blog-card h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
+
+/* ====== Testimonials Section ====== */
+.testimonials-section {
+  background-color: var(--section-4-bg);
+  color: var(--text-dark);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  color: var(--text-light);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.testimonial-card p { font-size: 1rem; margin-bottom: 1rem; }
+.testimonial-card h4 { font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--secondary-color); }
 
 /* ====== Contact ====== */
 .contact-wrapper { text-align: center; }
@@ -339,9 +337,11 @@ footer { background: var(--section-1-bg); color: #fff; text-align: center; paddi
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
   .hero-points p { font-size: 1rem; }
+  nav { display: none; flex-direction: column; }
+  nav.active { display: flex; }
+  .hamburger { display: block; }
 }
 
-/* ===== Mobile: hamburger menu & responsive tweaks ===== */
 @media (max-width: 768px) {
   section { padding: 2rem 1rem; }
   .m365-grid, .services-grid, .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -353,8 +353,8 @@ footer { background: var(--section-1-bg); color: #fff; text-align: center; paddi
   .whatsapp-badge { padding: 0.6rem 1rem; font-size: 0.85rem; }
   .whatsapp-badge .whatsapp-icon { width: 25px; height: 25px; font-size: 1rem; }
 
-  /* Hamburger menu display on mobile only */
-  .hamburger { display: block; }
-  nav { display: none; flex-direction: column; }
-  nav.active { display: flex; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .testimonials-section h2 { font-size: 1.6rem; }
+  .testimonial-card p { font-size: 0.95rem; }
+  .testimonial-card h4 { font-size: 0.9rem; }
 }
