@@ -1,15 +1,17 @@
 /* ====== COLOR VARIABLES ====== */
 :root {
-  --primary-color: #1a73e8;       /* blue */
-  --secondary-color: #f39c12;     /* orange */
-  --accent-bg: #eef3fb;           /* light blue */
+  --primary-color: #1a73e8;       /* main blue */
+  --secondary-color: #f39c12;     /* accent/orange for highlights/buttons */
   --card-bg: #2c3e50;             /* dark card background */
-  --text-color: #ffffff;           /* default text white for dark sections */
-  --section-1-bg: #1a1a1a;        /* dark gray */
-  --section-2-bg: #f39c12;        /* bright orange */
-  --section-3-bg: #1a73e8;        /* blue */
-  --section-4-bg: #16a085;        /* teal */
-  --section-5-bg: #8e44ad;        /* purple */
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+
+  /* Section blue shades */
+  --section-1-bg: #0b3d91;        /* darkest blue */
+  --section-2-bg: #1a73e8;        /* main blue */
+  --section-3-bg: #4285f4;        /* medium blue */
+  --section-4-bg: #6ea3ff;        /* light blue */
+  --section-5-bg: #9ec9ff;        /* very light blue */
 }
 
 /* ====== General Reset ====== */
@@ -22,8 +24,8 @@
 
 body {
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: #121212; /* dark background instead of white */
+  color: var(--text-light);
+  background-color: #121212; /* dark background */
 }
 
 /* ====== Container ====== */
@@ -35,7 +37,7 @@ body {
 
 /* ====== Header ====== */
 header {
-  background: #0d47a1; /* darker blue for header contrast */
+  background: var(--section-1-bg); /* darkest blue */
   border-bottom: 2px solid var(--secondary-color);
   padding: 1rem 0;
 }
@@ -53,7 +55,7 @@ header {
 nav a {
   margin-left: 1rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-light);
   font-weight: 500;
 }
 
@@ -70,10 +72,10 @@ nav a.btn-small {
 
 /* ====== Hero ====== */
 .hero {
-  background: linear-gradient(120deg, #1a73e8, #6ea3ff);
+  background: linear-gradient(120deg, var(--section-2-bg), var(--section-3-bg));
   padding: 3rem 0;
   text-align: center;
-  color: #fff;
+  color: var(--text-light);
 }
 
 .hero-content {
@@ -114,8 +116,8 @@ nav a.btn-small {
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
-  background: linear-gradient(90deg, #0b3d91, #0d47a1); /* dark blue gradient */
-  color: #fff;
+  background: linear-gradient(90deg, var(--section-1-bg), var(--section-2-bg));
+  color: var(--text-light);
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -139,30 +141,30 @@ nav a.btn-small {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* ====== Sections with contrasting backgrounds ====== */
+/* ====== Sections with blue shades ====== */
 section:nth-of-type(1) {
   background-color: var(--section-1-bg);
-  color: #fff;
+  color: var(--text-light);
 }
 
 section:nth-of-type(2) {
   background-color: var(--section-2-bg);
-  color: #1a1a1a; /* dark text for light section */
+  color: var(--text-light);
 }
 
 section:nth-of-type(3) {
   background-color: var(--section-3-bg);
-  color: #fff;
+  color: var(--text-light);
 }
 
 section:nth-of-type(4) {
   background-color: var(--section-4-bg);
-  color: #fff;
+  color: var(--text-dark);
 }
 
 section:nth-of-type(5) {
   background-color: var(--section-5-bg);
-  color: #fff;
+  color: var(--text-dark);
 }
 
 section {
@@ -189,8 +191,8 @@ section {
 .m365-grid .m365-card,
 .services-grid .card,
 .blog-grid .blog-card {
-  background: var(--card-bg); /* dark cards for contrast */
-  color: #fff;
+  background: var(--card-bg);
+  color: var(--text-light);
   border-radius: 10px;
   border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
@@ -242,62 +244,8 @@ section {
 
 /* ====== Footer ====== */
 footer {
-  background: #0d47a1;
+  background: var(--section-1-bg);
   color: #fff;
   text-align: center;
   padding: 1rem 0;
-}
-
-/* ====== Responsive ====== */
-@media(max-width: 768px){
-  .hamburger {
-    display: block;
-  }
-  nav {
-    display: none;
-    flex-direction: column;
-  }
-  nav.active {
-    display: flex;
-  }
-}
-
-/* ===== WhatsApp Premium Badge ===== */
-.whatsapp-badge {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #0d47a1;
-  color: #fff;
-  padding: 0.8rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  z-index: 1000;
-}
-
-.whatsapp-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.whatsapp-badge .whatsapp-icon {
-  background-color: #25d366;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.whatsapp-badge .whatsapp-text {
-  font-size: 0.95rem;
 }
