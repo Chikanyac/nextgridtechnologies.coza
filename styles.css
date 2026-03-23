@@ -53,6 +53,11 @@ header {
   height: 50px;
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
 nav a {
   margin-left: 1rem;
   text-decoration: none;
@@ -69,6 +74,13 @@ nav a.btn-small {
   color: #fff;
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
+}
+
+/* ====== Hamburger ====== */
+.hamburger {
+  display: none; /* hidden by default on desktop */
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 /* ====== Hero ====== */
@@ -212,25 +224,6 @@ section { padding: 3rem 0; }
   color: var(--secondary-color);
 }
 
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .testimonials-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .testimonial-card p {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-card h4 {
-    font-size: 0.9rem;
-  }
-}
 /* ====== Core Services Intro Text ====== */
 .core-services-intro {
   font-weight: 600;
@@ -346,11 +339,9 @@ footer { background: var(--section-1-bg); color: #fff; text-align: center; paddi
   .hero h1 { font-size: 1.8rem; }
   .hero p { font-size: 1rem; }
   .hero-points p { font-size: 1rem; }
-  nav { display: none; flex-direction: column; }
-  nav.active { display: flex; }
-  .hamburger { display: block; }
 }
 
+/* ===== Mobile: hamburger menu & responsive tweaks ===== */
 @media (max-width: 768px) {
   section { padding: 2rem 1rem; }
   .m365-grid, .services-grid, .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -361,4 +352,9 @@ footer { background: var(--section-1-bg); color: #fff; text-align: center; paddi
   .core-services-intro { font-size: 1.1rem; }
   .whatsapp-badge { padding: 0.6rem 1rem; font-size: 0.85rem; }
   .whatsapp-badge .whatsapp-icon { width: 25px; height: 25px; font-size: 1rem; }
+
+  /* Hamburger menu display on mobile only */
+  .hamburger { display: block; }
+  nav { display: none; flex-direction: column; }
+  nav.active { display: flex; }
 }
