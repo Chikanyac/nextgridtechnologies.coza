@@ -140,6 +140,19 @@ nav a.btn-small {
   font-size: 0.95rem;
 }
 
+.trust-bar {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 999 !important;
+  background: red !important; /* temporary for debugging */
+  height: auto !important;
+}
+.trust-bar .trust-item {
+  display: block !important;
+}
+
 /* ====== Sections ====== */
 section {
   padding: 3rem 0;
