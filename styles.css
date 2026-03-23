@@ -1,157 +1,219 @@
 /* ====== COLOR VARIABLES ====== */
 :root {
-  --primary-color: #1a73e8;       /* Blue */
-  --secondary-color: #f39c12;     /* Orange */
-  --accent-bg: #eef3fb;           /* Light background */
-  --card-bg: #ffffff;              /* Card background */
-  --text-color: #222;              /* Darker for readability */
-  --text-light: #555;              /* Secondary text */
-  --hover-color: #155ab6;          /* Darker primary for hover */
+  --primary-color: #1a73e8;
+  --secondary-color: #f39c12;
+  --accent-bg: #eef3fb;
+  --card-bg: #ffffff;
+  --text-color: #333;
 }
 
-/* ====== GENERAL RESET ====== */
+/* ====== General Reset ====== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  background-color: var(--accent-bg);
-  color: var(--text-color);
   line-height: 1.6;
-  font-size: 16px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* ====== HEADINGS ====== */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Arial', sans-serif;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
   color: var(--text-color);
+  background-color: #fff;
 }
 
-/* ====== LINKS ====== */
-a {
-  color: var(--primary-color);
+/* ====== Container ====== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== Header ====== */
+header {
+  background: var(--accent-bg);
+  border-bottom: 2px solid var(--primary-color);
+  padding: 1rem 0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+nav a {
+  margin-left: 1rem;
   text-decoration: none;
-  transition: color 0.3s;
+  color: var(--primary-color);
+  font-weight: 500;
 }
 
-a:hover {
-  color: var(--hover-color);
+nav a:hover {
+  color: var(--secondary-color);
 }
 
-/* ====== BUTTONS ====== */
-button, .btn {
-  background-color: var(--primary-color);
+nav a.btn-small {
+  background: var(--secondary-color);
   color: #fff;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+}
+
+/* ====== Hamburger ====== */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover, .btn:hover {
-  background-color: var(--hover-color);
-  transform: translateY(-2px);
-}
-
-/* ====== CARDS ====== */
-.card {
-  background-color: var(--card-bg);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  margin: 1rem 0;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* ====== SECTIONS ====== */
-section {
-  padding: 4rem 2rem;
-}
-
+/* ====== Hero ====== */
 .hero {
-  background-color: var(--primary-color);
-  color: #fff;
+  background: linear-gradient(120deg, #1a73e8, #6ea3ff);
+  padding: 3rem 0;
   text-align: center;
-  padding: 6rem 2rem;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  color: #f1f1f1;
+  margin-bottom: 1rem;
 }
 
-/* ====== CORE SERVICES / FEATURES ====== */
-.services {
+/* Hero checklist */
+.hero-points {
+  margin: 1.5rem 0;
+}
+
+.hero-points p {
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
+}
+
+/* ====== Buttons ====== */
+.btn-primary {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background: #e67e22;
+}
+
+/* ====== TRUST BAR (PREMIUM BADGE STYLE) ====== */
+.trust-bar {
+  background: #0d47a1;
+  padding: 1rem 0;
+}
+
+.trust-bar .container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* ====== Sections ====== */
+section {
+  padding: 3rem 0;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--accent-bg);
+}
+
+/* ====== Grid ====== */
+.m365-grid, .services-grid, .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
-.services .service-card {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.services .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* ====== SIDEBAR ====== */
-.sidebar {
-  background-color: var(--card-bg);
+/* ====== Cards ====== */
+.card, .m365-card, .blog-card {
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 2rem;
+  transition: 0.3s;
 }
 
-/* ====== FOOTER ====== */
+.card:hover, .m365-card:hover, .blog-card:hover {
+  transform: translateY(-5px);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* ====== Contact ====== */
+.contact-wrapper {
+  text-align: center;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border: none;
+}
+
+/* ====== Footer ====== */
 footer {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
-  padding: 2rem;
-  margin-top: 4rem;
+  padding: 1rem 0;
 }
 
-/* ====== MEDIA QUERIES ====== */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+/* ====== Responsive ====== */
+@media(max-width: 768px){
+  .hamburger {
+    display: block;
   }
-
-  section {
-    padding: 2rem 1rem;
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+  nav.active {
+    display: flex;
   }
 }
